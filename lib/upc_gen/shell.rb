@@ -3,9 +3,12 @@ require 'optparse'
 module UpcGen
   class Shell
     BANNER = <<"EOT"
-usage: #{$0}
+usage: #{$0} <optional-number-string><optional-dot>
 
 Prints a random UPC code
+
+If a number string is passed, the code before the check digit will end with those digits
+If the string of numbers is followed by a '.', the random code will start with those digits
 EOT
 
     def self.usage(err: STDERR)
@@ -30,7 +33,7 @@ EOT
         out.puts "version: #{UpcGen::VERSION}"
       end
 
-      puts GenerateUpc.new().generate
+      out.puts UpcGenerator.new(argv[0]).generate
     end
   end
 end

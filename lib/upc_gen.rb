@@ -9,6 +9,6 @@ module UpcGen
     Pathname.new(File.absolute_path(File.join(File.dirname(__FILE__), '..')))
   end
 
-  autoload :GenerateUpc , 'upc_gen/generate_upc'
+  autoload :UpcGenerator , 'upc_gen/upc_generator'
   autoload :Shell , 'upc_gen/shell'
 end
