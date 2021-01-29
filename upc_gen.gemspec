@@ -1,8 +1,8 @@
-require_relative 'lib/starter_gem/version'
+require_relative 'lib/upc_gen/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "starter_gem"
-  spec.version       = StarterGem::VERSION
+  spec.name          = "upc_gen"
+  spec.version       = UpcGen::VERSION
   spec.authors       = ["Tom ten Thij"]
   spec.email         = ["code@tomtenthij.nl"]
 

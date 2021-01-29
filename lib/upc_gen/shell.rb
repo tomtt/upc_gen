@@ -1,6 +1,6 @@
 require 'optparse'
 
-module StarterGem
+module UpcGen
   class Shell
     BANNER = <<"EOT"
 usage: #{$0} color
@@ -27,7 +27,7 @@ EOT
       end.parse! argv
 
       if options[:version]
-        out.puts "version: #{StarterGem::VERSION}"
+        out.puts "version: #{UpcGen::VERSION}"
       end
 
       unless argv.size == 1

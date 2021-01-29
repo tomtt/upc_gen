@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-# Specify your gem's dependencies in starter_gem.gemspec
+# Specify your gem's dependencies in upc_gen.gemspec
 gemspec
 
 gem "rake", "~> 12.0"

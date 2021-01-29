@@ -1,5 +1,5 @@
 require 'bundler/setup'
-require 'starter_gem'
+require 'upc_gen'
 require 'simplecov'
 require 'pry'
 

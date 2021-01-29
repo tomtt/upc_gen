@@ -1,3 +1,3 @@
-module StarterGem
+module UpcGen
   VERSION = "0.0.2"
 end
