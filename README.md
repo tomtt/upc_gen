@@ -1,28 +1,18 @@
 # UpcGen
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/upc_gen`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Command line utility that prints a random UPC code
 
 ## Installation
 
-Add this line to your application's Gemfile:
-
-```ruby
-gem 'upc_gen'
-```
-
-And then execute:
-
-    $ bundle install
-
-Or install it yourself as:
-
-    $ gem install upc_gen
+The gem will provide the `upc_gen` command when you `gem install upc_gen` on your system.
 
 ## Usage
 
-TODO: Write usage instructions here
+Run on command line like `upc_gen <optional-number-string><optional-char>`
+
+If a number string is passed, the code before the check digit will end with those digits
+If the string of numbers is followed by a '.', the random code will start with those digits
+If the string of numbers is followed by a '-', a code will be found that ends with those digits, including check digit
 
 ## Development
 

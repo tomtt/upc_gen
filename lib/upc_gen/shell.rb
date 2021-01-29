@@ -3,7 +3,7 @@ require 'optparse'
 module UpcGen
   class Shell
     BANNER = <<"EOT"
-usage: #{$0} <optional-number-string><optional-dot>
+usage: #{$0} <optional-number-string><optional-char>
 
 Prints a random UPC code
 
