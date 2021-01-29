@@ -10,9 +10,9 @@ The gem will provide the `upc_gen` command when you `gem install upc_gen` on you
 
 Run on command line like `upc_gen <optional-number-string><optional-char>`
 
-If a number string is passed, the code before the check digit will end with those digits
-If the string of numbers is followed by a '.', the random code will start with those digits
-If the string of numbers is followed by a '-', a code will be found that ends with those digits, including check digit
+- If a number string is passed, the code before the check digit will end with those digits
+- If the string of numbers is followed by a '.', the random code will start with those digits
+- If the string of numbers is followed by a '-', a code will be found that ends with those digits, including check digit
 
 ## Development
 
