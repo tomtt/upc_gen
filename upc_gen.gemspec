@@ -18,6 +18,5 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
 
-  # Just an example dependency using in example DoSomething class
-  spec.add_dependency('pastel', '~> 0.8.0')
+  spec.add_dependency('barby', '~> 0.5.1')
 end
