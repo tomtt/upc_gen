@@ -3,9 +3,9 @@ require 'optparse'
 module UpcGen
   class Shell
     BANNER = <<"EOT"
-usage: #{$0} color
+usage: #{$0}
 
-Simple demo that prints color in the color if it knows about the color
+Prints a random UPC code
 EOT
 
     def self.usage(err: STDERR)
@@ -26,17 +26,11 @@ EOT
         end
       end.parse! argv
 
-      if options[:version]
+      if options.delete(:version)
         out.puts "version: #{UpcGen::VERSION}"
       end
 
-      unless argv.size == 1
-        self.usage(err: err)
-      end
-
-      options[:color] = argv[0]
-
-      DoSomething.new(options, out: out, err: err).show
+      puts GenerateUpc.new().generate
     end
   end
 end

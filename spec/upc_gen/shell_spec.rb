@@ -11,11 +11,11 @@ RSpec.describe UpcGen::Shell do
   # This is an example of how you could hand over to a class
   it "does something if there is one argument" do
     argv = ['cookies']
-    do_something_double = double(::UpcGen::DoSomething, show: nil)
-    expect(::UpcGen::DoSomething).
+    generate_upc_double = double(::UpcGen::GenerateUpc, show: nil)
+    expect(::UpcGen::GenerateUpc).
       to receive(:new).
       with({color: 'cookies', show_version: false}, out: out_double, err: err_double).
-      and_return(do_something_double)
+      and_return(generate_upc_double)
     ::UpcGen::Shell.start( argv, out: out_double, err: err_double)
   end
 

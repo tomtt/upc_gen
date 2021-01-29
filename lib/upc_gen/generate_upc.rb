@@ -3,7 +3,7 @@ require "pastel"
 Encoding.default_external = 'UTF-8'
 
 module UpcGen
-  class DoSomething
+  class GenerateUpc
     def initialize(options, out: stdout, err: stderr)
       @options = options
       @out = out
