@@ -12,11 +12,25 @@ module UpcGen
       (1..n).map { rand(10) }.join
     end
 
+    def find_code_ending_on(n)
+      digits = n[0...-1]
+      check = n[-1]
+      n_random_digits(12 - n.length)
+      candidate = EAN13.complete(n_random_digits(12 - digits.length) + digits)
+      while(candidate[-1] != check)
+        candidate = EAN13.complete(n_random_digits(12 - digits.length) + digits)
+      end
+      candidate
+    end
+
     def generate
       if @seed
         number_string = @seed
         random_position = :end
         unless number_string =~ /^\d*$/
+          if number_string =~ /\d-/
+            random_position = :forced_end
+          end
           if number_string =~ /\d\./
             random_position = :start
           end
@@ -26,6 +40,8 @@ module UpcGen
         if number_string.length < 12
           if random_position == :start
             number_string += n_random_digits(12 - number_string.length)
+          elsif random_position == :forced_end
+            return find_code_ending_on(number_string)
           else
             number_string = n_random_digits(12 - number_string.length) + number_string
           end

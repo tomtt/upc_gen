@@ -9,6 +9,7 @@ Prints a random UPC code
 
 If a number string is passed, the code before the check digit will end with those digits
 If the string of numbers is followed by a '.', the random code will start with those digits
+If the string of numbers is followed by a '-', a code will be found that ends with those digits, including check digit
 EOT
 
     def self.usage(err: STDERR)
