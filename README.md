@@ -14,6 +14,14 @@ Run on command line like `upc_gen <optional-number-string><optional-char>`
 - If the string of numbers is followed by a '.', the random code will start with those digits
 - If the string of numbers is followed by a '-', a code will be found that ends with those digits, including check digit
 
+Examples:
+    >: upc_gen 001234
+    2938210012347
+    >: upc_gen 001234.
+    0012348367936
+    >: upc_gen 001234-
+    4493664001234
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
