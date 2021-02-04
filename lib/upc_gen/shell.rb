@@ -2,8 +2,8 @@ require "optparse"
 
 module UpcGen
   class Shell
-    BANNER = <<~"MSG"
-      usage: #{$0} <optional-number-string><optional-char>
+    BANNER = <<~"MSG".freeze
+      usage: #{$PROGRAM_NAME} <optional-number-string><optional-char>
 
       Prints a random UPC code
 
@@ -32,7 +32,7 @@ module UpcGen
       options
     end
 
-    def self.start(argv, out: $stdout, err: $stderr)
+    def self.start(argv, out: $stdout, err: $stderr) # rubocop:disable Lint/UnusedMethodArgument
       options = gather_options(argv)
 
       out.puts "version: #{UpcGen::VERSION}" if options.delete(:version)
