@@ -1,6 +1,6 @@
-require 'ean13'
+require "ean13"
 
-Encoding.default_external = 'UTF-8'
+Encoding.default_external = "UTF-8"
 
 module UpcGen
   class UpcGenerator
@@ -17,7 +17,7 @@ module UpcGen
       check = n[-1]
       n_random_digits(12 - n.length)
       candidate = EAN13.complete(n_random_digits(12 - digits.length) + digits)
-      while(candidate[-1] != check)
+      while candidate[-1] != check
         candidate = EAN13.complete(n_random_digits(12 - digits.length) + digits)
       end
       candidate
@@ -27,11 +27,11 @@ module UpcGen
       if @seed
         number_string = @seed
         random_position = :end
-        unless number_string =~ /^\d*$/
-          if number_string =~ /\d-/
+        unless /^\d*$/.match?(number_string)
+          if /\d-/.match?(number_string)
             random_position = :forced_end
           end
-          if number_string =~ /\d\./
+          if /\d\./.match?(number_string)
             random_position = :start
           end
           number_string = number_string.match(/^\d+/)[0]

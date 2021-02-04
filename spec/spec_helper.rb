@@ -1,7 +1,7 @@
-require 'bundler/setup'
-require 'upc_gen'
-require 'simplecov'
-require 'pry'
+require "bundler/setup"
+require "upc_gen"
+require "simplecov"
+require "pry"
 
 SimpleCov.start
 

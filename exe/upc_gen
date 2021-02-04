@@ -1,4 +1,4 @@
 #!/usr/bin/env ruby
 
-require 'upc_gen'
+require "upc_gen"
 UpcGen::Shell.start(ARGV)
