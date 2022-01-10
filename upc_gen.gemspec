@@ -6,7 +6,7 @@ Gem::Specification.new do |spec|
   spec.authors = ["Tom ten Thij"]
   spec.email = ["code@tomtenthij.nl"]
 
-  spec.summary = "A skeleton to start a gem from"
+  spec.summary = "Tool to generate ean13 upc barcodes, starting or ending with specific values"
   spec.required_ruby_version = Gem::Requirement.new(">= 2.4.0")
 
   # Specify which files should be added to the gem when it is released.
