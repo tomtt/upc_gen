@@ -55,7 +55,7 @@ module UpcGen
     end
 
     def generate
-      if @seed
+      if @seed && ![".", "-"].include?(@seed)
         complete generate_for_seed
       else
         complete n_random_digits(12)

@@ -15,7 +15,15 @@ RSpec.describe UpcGen::UpcGenerator do
     expect(::UpcGen::UpcGenerator.new("123.").generate).to match(/^123\d{10}$/)
   end
 
+  it "generates a full upc if seed is only '.'" do
+    expect(::UpcGen::UpcGenerator.new(".").generate).to match(/^\d{13}$/)
+  end
+
   it "has the digits at the very end if there is a - after the numbers" do
     expect(::UpcGen::UpcGenerator.new("123-").generate).to match(/^\d{10}123$/)
+  end
+
+  it "generates a full upc if seed is only '-'" do
+    expect(::UpcGen::UpcGenerator.new("-").generate).to match(/^\d{13}$/)
   end
 end
